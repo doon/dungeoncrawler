@@ -1,4 +1,4 @@
-use crate::prelude::*;
+pub(crate) use crate::prelude::*;
 #[system]
 #[write_component(Point)]
 #[read_component(Player)]
