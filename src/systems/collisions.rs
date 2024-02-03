@@ -9,7 +9,7 @@ pub fn collisions(ecs: &mut SubWorld, commands: &mut CommandBuffer) {
     let mut players = <&Point>::query().filter(component::<Player>());
     players.iter(ecs).for_each(|pos| player_pos = *pos);
 
-    let mut enemies = <(Entity, &Point)>::query()
+    let _enemies = <(Entity, &Point)>::query()
         .filter(component::<Enemy>())
         .iter(ecs)
         .filter(|(_, pos)| **pos == player_pos)
