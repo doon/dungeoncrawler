@@ -1,5 +1,3 @@
-use std::slice::EscapeAscii;
-
 use crate::prelude::*;
 
 #[system]
@@ -13,7 +11,7 @@ pub fn combat(ecs: &mut SubWorld, commands: &mut CommandBuffer) {
         .collect();
 
     victims.iter().for_each(|(message, victim)| {
-        if let Ok(mut health) = ecs
+        if let Ok(health) = ecs
             .entry_mut(*victim)
             .unwrap()
             .get_component_mut::<Health>()
